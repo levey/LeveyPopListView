@@ -1,0 +1,337 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5CD32F3D14F3673800B61D11 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CD32F3C14F3673800B61D11 /* UIKit.framework */; };
+		5CD32F3F14F3673800B61D11 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CD32F3E14F3673800B61D11 /* Foundation.framework */; };
+		5CD32F4114F3673800B61D11 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CD32F4014F3673800B61D11 /* CoreGraphics.framework */; };
+		5CD32F4714F3673800B61D11 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5CD32F4514F3673800B61D11 /* InfoPlist.strings */; };
+		5CD32F4914F3673800B61D11 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD32F4814F3673800B61D11 /* main.m */; };
+		5CD32F4D14F3673800B61D11 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD32F4C14F3673800B61D11 /* AppDelegate.m */; };
+		5CD32F6214F3679A00B61D11 /* deviant-art.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CD32F5414F3679A00B61D11 /* deviant-art.png */; };
+		5CD32F6314F3679A00B61D11 /* dribbble.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CD32F5514F3679A00B61D11 /* dribbble.png */; };
+		5CD32F6414F3679A00B61D11 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CD32F5614F3679A00B61D11 /* facebook.png */; };
+		5CD32F6514F3679A00B61D11 /* google-plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CD32F5714F3679A00B61D11 /* google-plus.png */; };
+		5CD32F6614F3679A00B61D11 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CD32F5814F3679A00B61D11 /* icon.png */; };
+		5CD32F6714F3679A00B61D11 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CD32F5914F3679A00B61D11 /* icon@2x.png */; };
+		5CD32F6814F3679A00B61D11 /* linkedin.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CD32F5A14F3679A00B61D11 /* linkedin.png */; };
+		5CD32F6914F3679A00B61D11 /* pinterest.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CD32F5B14F3679A00B61D11 /* pinterest.png */; };
+		5CD32F6A14F3679A00B61D11 /* tumblr.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CD32F5C14F3679A00B61D11 /* tumblr.png */; };
+		5CD32F6B14F3679A00B61D11 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CD32F5D14F3679A00B61D11 /* twitter.png */; };
+		5CD32F6C14F3679A00B61D11 /* youtube.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CD32F5E14F3679A00B61D11 /* youtube.png */; };
+		5CD32F7114F367EF00B61D11 /* LeveyPopListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD32F7014F367EF00B61D11 /* LeveyPopListView.m */; };
+		5CD32F7E14F374DD00B61D11 /* LeveyPopListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD32F7D14F374DD00B61D11 /* LeveyPopListViewCell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5CD32F3814F3673800B61D11 /* LeveyPopListViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeveyPopListViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CD32F3C14F3673800B61D11 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5CD32F3E14F3673800B61D11 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5CD32F4014F3673800B61D11 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5CD32F4414F3673800B61D11 /* LeveyPopListViewDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LeveyPopListViewDemo-Info.plist"; sourceTree = "<group>"; };
+		5CD32F4614F3673800B61D11 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5CD32F4814F3673800B61D11 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5CD32F4A14F3673800B61D11 /* LeveyPopListViewDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LeveyPopListViewDemo-Prefix.pch"; sourceTree = "<group>"; };
+		5CD32F4B14F3673800B61D11 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5CD32F4C14F3673800B61D11 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5CD32F5414F3679A00B61D11 /* deviant-art.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "deviant-art.png"; sourceTree = "<group>"; };
+		5CD32F5514F3679A00B61D11 /* dribbble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dribbble.png; sourceTree = "<group>"; };
+		5CD32F5614F3679A00B61D11 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
+		5CD32F5714F3679A00B61D11 /* google-plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google-plus.png"; sourceTree = "<group>"; };
+		5CD32F5814F3679A00B61D11 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		5CD32F5914F3679A00B61D11 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		5CD32F5A14F3679A00B61D11 /* linkedin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linkedin.png; sourceTree = "<group>"; };
+		5CD32F5B14F3679A00B61D11 /* pinterest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinterest.png; sourceTree = "<group>"; };
+		5CD32F5C14F3679A00B61D11 /* tumblr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tumblr.png; sourceTree = "<group>"; };
+		5CD32F5D14F3679A00B61D11 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
+		5CD32F5E14F3679A00B61D11 /* youtube.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = youtube.png; sourceTree = "<group>"; };
+		5CD32F6F14F367EF00B61D11 /* LeveyPopListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeveyPopListView.h; sourceTree = "<group>"; };
+		5CD32F7014F367EF00B61D11 /* LeveyPopListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeveyPopListView.m; sourceTree = "<group>"; };
+		5CD32F7A14F36F8C00B61D11 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5CD32F7C14F374DD00B61D11 /* LeveyPopListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeveyPopListViewCell.h; sourceTree = "<group>"; };
+		5CD32F7D14F374DD00B61D11 /* LeveyPopListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeveyPopListViewCell.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5CD32F3514F3673800B61D11 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CD32F3D14F3673800B61D11 /* UIKit.framework in Frameworks */,
+				5CD32F3F14F3673800B61D11 /* Foundation.framework in Frameworks */,
+				5CD32F4114F3673800B61D11 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5CD32F2D14F3673800B61D11 = {
+			isa = PBXGroup;
+			children = (
+				5CD32F4214F3673800B61D11 /* LeveyPopListViewDemo */,
+				5CD32F3B14F3673800B61D11 /* Frameworks */,
+				5CD32F3914F3673800B61D11 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5CD32F3914F3673800B61D11 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5CD32F3814F3673800B61D11 /* LeveyPopListViewDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5CD32F3B14F3673800B61D11 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5CD32F7A14F36F8C00B61D11 /* QuartzCore.framework */,
+				5CD32F3C14F3673800B61D11 /* UIKit.framework */,
+				5CD32F3E14F3673800B61D11 /* Foundation.framework */,
+				5CD32F4014F3673800B61D11 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5CD32F4214F3673800B61D11 /* LeveyPopListViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				5CD32F6E14F367EF00B61D11 /* LeveyPopListView */,
+				5CD32F5314F3679A00B61D11 /* imgs */,
+				5CD32F4B14F3673800B61D11 /* AppDelegate.h */,
+				5CD32F4C14F3673800B61D11 /* AppDelegate.m */,
+				5CD32F4314F3673800B61D11 /* Supporting Files */,
+			);
+			path = LeveyPopListViewDemo;
+			sourceTree = "<group>";
+		};
+		5CD32F4314F3673800B61D11 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5CD32F4414F3673800B61D11 /* LeveyPopListViewDemo-Info.plist */,
+				5CD32F4514F3673800B61D11 /* InfoPlist.strings */,
+				5CD32F4814F3673800B61D11 /* main.m */,
+				5CD32F4A14F3673800B61D11 /* LeveyPopListViewDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5CD32F5314F3679A00B61D11 /* imgs */ = {
+			isa = PBXGroup;
+			children = (
+				5CD32F5414F3679A00B61D11 /* deviant-art.png */,
+				5CD32F5514F3679A00B61D11 /* dribbble.png */,
+				5CD32F5614F3679A00B61D11 /* facebook.png */,
+				5CD32F5714F3679A00B61D11 /* google-plus.png */,
+				5CD32F5814F3679A00B61D11 /* icon.png */,
+				5CD32F5914F3679A00B61D11 /* icon@2x.png */,
+				5CD32F5A14F3679A00B61D11 /* linkedin.png */,
+				5CD32F5B14F3679A00B61D11 /* pinterest.png */,
+				5CD32F5C14F3679A00B61D11 /* tumblr.png */,
+				5CD32F5D14F3679A00B61D11 /* twitter.png */,
+				5CD32F5E14F3679A00B61D11 /* youtube.png */,
+			);
+			path = imgs;
+			sourceTree = "<group>";
+		};
+		5CD32F6E14F367EF00B61D11 /* LeveyPopListView */ = {
+			isa = PBXGroup;
+			children = (
+				5CD32F6F14F367EF00B61D11 /* LeveyPopListView.h */,
+				5CD32F7014F367EF00B61D11 /* LeveyPopListView.m */,
+				5CD32F7C14F374DD00B61D11 /* LeveyPopListViewCell.h */,
+				5CD32F7D14F374DD00B61D11 /* LeveyPopListViewCell.m */,
+			);
+			path = LeveyPopListView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5CD32F3714F3673800B61D11 /* LeveyPopListViewDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5CD32F5014F3673800B61D11 /* Build configuration list for PBXNativeTarget "LeveyPopListViewDemo" */;
+			buildPhases = (
+				5CD32F3414F3673800B61D11 /* Sources */,
+				5CD32F3514F3673800B61D11 /* Frameworks */,
+				5CD32F3614F3673800B61D11 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LeveyPopListViewDemo;
+			productName = LeveyPopListViewDemo;
+			productReference = 5CD32F3814F3673800B61D11 /* LeveyPopListViewDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5CD32F2F14F3673800B61D11 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Levey;
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = Levey;
+			};
+			buildConfigurationList = 5CD32F3214F3673800B61D11 /* Build configuration list for PBXProject "LeveyPopListViewDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5CD32F2D14F3673800B61D11;
+			productRefGroup = 5CD32F3914F3673800B61D11 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5CD32F3714F3673800B61D11 /* LeveyPopListViewDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5CD32F3614F3673800B61D11 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CD32F4714F3673800B61D11 /* InfoPlist.strings in Resources */,
+				5CD32F6214F3679A00B61D11 /* deviant-art.png in Resources */,
+				5CD32F6314F3679A00B61D11 /* dribbble.png in Resources */,
+				5CD32F6414F3679A00B61D11 /* facebook.png in Resources */,
+				5CD32F6514F3679A00B61D11 /* google-plus.png in Resources */,
+				5CD32F6614F3679A00B61D11 /* icon.png in Resources */,
+				5CD32F6714F3679A00B61D11 /* icon@2x.png in Resources */,
+				5CD32F6814F3679A00B61D11 /* linkedin.png in Resources */,
+				5CD32F6914F3679A00B61D11 /* pinterest.png in Resources */,
+				5CD32F6A14F3679A00B61D11 /* tumblr.png in Resources */,
+				5CD32F6B14F3679A00B61D11 /* twitter.png in Resources */,
+				5CD32F6C14F3679A00B61D11 /* youtube.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5CD32F3414F3673800B61D11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CD32F4914F3673800B61D11 /* main.m in Sources */,
+				5CD32F4D14F3673800B61D11 /* AppDelegate.m in Sources */,
+				5CD32F7114F367EF00B61D11 /* LeveyPopListView.m in Sources */,
+				5CD32F7E14F374DD00B61D11 /* LeveyPopListViewCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5CD32F4514F3673800B61D11 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5CD32F4614F3673800B61D11 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5CD32F4E14F3673800B61D11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5CD32F4F14F3673800B61D11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5CD32F5114F3673800B61D11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LeveyPopListViewDemo/LeveyPopListViewDemo-Prefix.pch";
+				INFOPLIST_FILE = "LeveyPopListViewDemo/LeveyPopListViewDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5CD32F5214F3673800B61D11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LeveyPopListViewDemo/LeveyPopListViewDemo-Prefix.pch";
+				INFOPLIST_FILE = "LeveyPopListViewDemo/LeveyPopListViewDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5CD32F3214F3673800B61D11 /* Build configuration list for PBXProject "LeveyPopListViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CD32F4E14F3673800B61D11 /* Debug */,
+				5CD32F4F14F3673800B61D11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5CD32F5014F3673800B61D11 /* Build configuration list for PBXNativeTarget "LeveyPopListViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CD32F5114F3673800B61D11 /* Debug */,
+				5CD32F5214F3673800B61D11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5CD32F2F14F3673800B61D11 /* Project object */;
+}
