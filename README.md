@@ -1,6 +1,6 @@
 ### What's it?
 
-When your app have so many options to choose, LeveyPopListView is a alternative of UIActionSheet, hope it can help someone :)
+When your app have so many options to choose, LeveyPopListView is an alternative of UIActionSheet, hope it can help someone :)
 
 ### How to
 
