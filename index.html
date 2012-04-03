@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Leveypoplistview : LeveyPopListView is a alternative of UIActionSheet : ) " />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Leveypoplistview</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/levey/LeveyPopListView">Fork Me on GitHub</a>
+
+          <h1 id="project_title">Leveypoplistview</h1>
+          <h2 id="project_tagline">LeveyPopListView is a alternative of UIActionSheet : ) </h2>
+
+          <section id="downloads">
+            <a class="zip_download_link" href="https://github.com/levey/LeveyPopListView/zipball/master">Download this project as a .zip file</a>
+            <a class="tar_download_link" href="https://github.com/levey/LeveyPopListView/tarball/master">Download this project as a tar.gz file</a>
+          </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>What's it?</h3>
+
+<p>When your app have so many options to choose, LeveyPopListView is an alternative of UIActionSheet, hope it can help someone :)</p>
+
+<h3>How to use?</h3>
+
+<p><strong>Create and show the View</strong></p>
+
+<pre><code>LeveyPopListView *lplv = [[LeveyPopListView alloc] initWithTitle:@"Share Photo to..." options:_options];
+lplv.delegate = self;
+[lplv showInView:self.window animated:YES];
+[lplv release];
+</code></pre>
+
+<p><strong>Get the delegate methods</strong></p>
+
+<pre><code>#pragma mark - LeveyPopListView delegates
+- (void)leveyPopListView:(LeveyPopListView *)popListView didSelectedIndex:(NSInteger)anIndex;
+- (void)leveyPopListViewDidCancel;
+</code></pre>
+
+<h3>Screenshot ⤵</h3>
+
+<p><img src="http://i.minus.com/iDQo9wuPCB1Gr.png" alt="Screen"></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Leveypoplistview maintained by <a href="https://github.com/levey">levey</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
