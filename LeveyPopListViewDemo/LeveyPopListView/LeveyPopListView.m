@@ -99,8 +99,13 @@
         cell = [[[LeveyPopListViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentity] autorelease];
     }
     int row = [indexPath row];
-    cell.imageView.image = [[_options objectAtIndex:row] objectForKey:@"img"];
-    cell.textLabel.text = [[_options objectAtIndex:row] objectForKey:@"text"];
+    
+    if ([[_options objectAtIndex:row] respondsToSelector:@selector(objectForKey:)]) {
+        cell.imageView.image = [[_options objectAtIndex:row] objectForKey:@"img"];
+        cell.textLabel.text = [[_options objectAtIndex:row] objectForKey:@"text"];
+    }else {
+        cell.textLabel.text = [_options objectAtIndex:row];
+    }
     
     return cell;
 }

@@ -34,7 +34,7 @@
     _infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 100, 320, 30)];
     _infoLabel.textAlignment = UITextAlignmentCenter;
     [self.window addSubview:_infoLabel];
-    
+    /*
     _options = [[NSArray arrayWithObjects:
                  [NSDictionary dictionaryWithObjectsAndKeys:[UIImage imageNamed:@"facebook.png"],@"img",@"Facebook",@"text", nil],
                  [NSDictionary dictionaryWithObjectsAndKeys:[UIImage imageNamed:@"twitter.png"],@"img",@"Twitter",@"text", nil], 
@@ -45,6 +45,9 @@
                  [NSDictionary dictionaryWithObjectsAndKeys:[UIImage imageNamed:@"dribbble.png"],@"img",@"Dribbble",@"text", nil], 
                  [NSDictionary dictionaryWithObjectsAndKeys:[UIImage imageNamed:@"deviant-art.png"],@"img",@"deviantArt",@"text", nil], 
                  nil] retain];
+     */
+    
+    _options = [[NSArray arrayWithObjects:@"Facebook",@"Facebook",@"Facebook",@"Facebook",@"Facebook", nil]retain];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
@@ -62,7 +65,7 @@
 #pragma mark - LeveyPopListView delegates
 - (void)leveyPopListView:(LeveyPopListView *)popListView didSelectedIndex:(NSInteger)anIndex
 {
-    _infoLabel.text = [NSString stringWithFormat:@"You have selected %@",[[_options objectAtIndex:anIndex] objectForKey:@"text"]];
+    _infoLabel.text = [NSString stringWithFormat:@"You have selected %@",[_options objectAtIndex:anIndex]];
 }
 - (void)leveyPopListViewDidCancel
 {
