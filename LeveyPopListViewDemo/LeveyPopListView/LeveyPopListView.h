@@ -16,9 +16,13 @@
 }
 
 @property (nonatomic, assign) id<LeveyPopListViewDelegate> delegate;
+@property (copy, nonatomic) void(^handlerBlock)(NSInteger anIndex);
 
 // The options is a NSArray, contain some NSDictionaries, the NSDictionary contain 2 keys, one is "img", another is "text".
 - (id)initWithTitle:(NSString *)aTitle options:(NSArray *)aOptions;
+- (id)initWithTitle:(NSString *)aTitle 
+            options:(NSArray *)aOptions 
+            handler:(void (^)(NSInteger))aHandlerBlock;
 // If animated is YES, PopListView will be appeared with FadeIn effect.
 - (void)showInView:(UIView *)aView animated:(BOOL)animated;
 @end

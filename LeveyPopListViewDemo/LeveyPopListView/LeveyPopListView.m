@@ -20,6 +20,7 @@
 
 @implementation LeveyPopListView
 @synthesize delegate;
+@synthesize handlerBlock;
 #pragma mark - initialization & cleaning up
 - (id)initWithTitle:(NSString *)aTitle options:(NSArray *)aOptions
 {
@@ -42,6 +43,15 @@
 
     }
     return self;    
+}
+
+- (id)initWithTitle:(NSString *)aTitle 
+            options:(NSArray *)aOptions 
+            handler:(void (^)(NSInteger anIndex))aHandlerBlock{
+    if(self = [self initWithTitle:aTitle options:aOptions]){
+        self.handlerBlock = aHandlerBlock;
+    }
+    return self;
 }
 
 - (void)dealloc
@@ -117,6 +127,10 @@
     // tell the delegate the selection
     if (self.delegate && [self.delegate respondsToSelector:@selector(leveyPopListView:didSelectedIndex:)]) {
         [self.delegate leveyPopListView:self didSelectedIndex:[indexPath row]];
+    }
+    
+    if (self.handlerBlock) {
+        handlerBlock(indexPath.row);
     }
     
     // dismiss self

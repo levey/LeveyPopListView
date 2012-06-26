@@ -47,7 +47,7 @@
                  nil] retain];
      */
     
-    _options = [[NSArray arrayWithObjects:@"Facebook",@"Facebook",@"Facebook",@"Facebook",@"Facebook", nil]retain];
+    _options = [[NSArray arrayWithObjects:@"Facebook1",@"Facebook2",@"Facebook3",@"Facebook4",@"Facebook5", nil]retain];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
@@ -56,8 +56,10 @@
 
 - (void)showListView
 {
-    LeveyPopListView *lplv = [[LeveyPopListView alloc] initWithTitle:@"Share Photo to..." options:_options];
-    lplv.delegate = self;
+    LeveyPopListView *lplv = [[LeveyPopListView alloc] initWithTitle:@"Share Photo to..." options:_options handler:^(NSInteger anIndex) {
+        _infoLabel.text = [NSString stringWithFormat:@"You have selected %@",[_options objectAtIndex:anIndex]];
+    }];
+//    lplv.delegate = self;
     [lplv showInView:self.window animated:YES];
     [lplv release];
 }
