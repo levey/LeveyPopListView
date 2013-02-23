@@ -18,15 +18,16 @@
 - (void)fadeOut;
 @end
 
-@implementation LeveyPopListView
-@synthesize delegate;
-@synthesize handlerBlock;
+@implementation LeveyPopListView {
+    UITableView *_tableView;
+    NSString *_title;
+    NSArray *_options;
+}
+
 #pragma mark - initialization & cleaning up
-- (id)initWithTitle:(NSString *)aTitle options:(NSArray *)aOptions
-{
+- (id)initWithTitle:(NSString *)aTitle options:(NSArray *)aOptions {
     CGRect rect = [[UIScreen mainScreen] applicationFrame];
-    if (self = [super initWithFrame:rect])
-    {
+    if (self = [super initWithFrame:rect]) {
         self.backgroundColor = [UIColor clearColor];
         _title = [aTitle copy];
         _options = [aOptions copy];
@@ -40,31 +41,23 @@
         _tableView.dataSource = self;
         _tableView.delegate = self;
         [self addSubview:_tableView];
-
     }
     return self;    
 }
 
 - (id)initWithTitle:(NSString *)aTitle 
             options:(NSArray *)aOptions 
-            handler:(void (^)(NSInteger anIndex))aHandlerBlock{
-    if(self = [self initWithTitle:aTitle options:aOptions]){
+            handler:(void (^)(NSInteger anIndex))aHandlerBlock {
+    
+    if(self = [self initWithTitle:aTitle options:aOptions])
         self.handlerBlock = aHandlerBlock;
-    }
+    
     return self;
 }
 
-- (void)dealloc
-{
-    [_title release];
-    [_options release];
-    [_tableView release];
-    [super dealloc];
-}
 
 #pragma mark - Private Methods
-- (void)fadeIn
-{
+- (void)fadeIn {
     self.transform = CGAffineTransformMakeScale(1.3, 1.3);
     self.alpha = 0;
     [UIView animateWithDuration:.35 animations:^{
@@ -73,8 +66,7 @@
     }];
 
 }
-- (void)fadeOut
-{
+- (void)fadeOut {
     [UIView animateWithDuration:.35 animations:^{
         self.transform = CGAffineTransformMakeScale(1.3, 1.3);
         self.alpha = 0.0;
@@ -86,8 +78,7 @@
 }
 
 #pragma mark - Instance Methods
-- (void)showInView:(UIView *)aView animated:(BOOL)animated
-{
+- (void)showInView:(UIView *)aView animated:(BOOL)animated {
     [aView addSubview:self];
     if (animated) {
         [self fadeIn];
@@ -95,27 +86,22 @@
 }
 
 #pragma mark - Tableview datasource & delegates
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [_options count];
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return _options.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentity = @"PopListViewCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentity];
-    if (cell ==  nil) {
-        cell = [[[LeveyPopListViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentity] autorelease];
-    }
-    int row = [indexPath row];
+    if (!cell)
+        cell = [[LeveyPopListViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentity];
     
-    if ([[_options objectAtIndex:row] respondsToSelector:@selector(objectForKey:)]) {
-        cell.imageView.image = [[_options objectAtIndex:row] objectForKey:@"img"];
-        cell.textLabel.text = [[_options objectAtIndex:row] objectForKey:@"text"];
-    }else {
-        cell.textLabel.text = [_options objectAtIndex:row];
-    }
+    if ([_options[indexPath.row] respondsToSelector:@selector(objectForKey:)]) {
+        cell.imageView.image = _options[indexPath.row][@"img"];
+        cell.textLabel.text = _options[indexPath.row][@"text"];
+    } else
+        cell.textLabel.text = _options[indexPath.row];
     
     return cell;
 }
@@ -125,32 +111,27 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     // tell the delegate the selection
-    if (self.delegate && [self.delegate respondsToSelector:@selector(leveyPopListView:didSelectedIndex:)]) {
-        [self.delegate leveyPopListView:self didSelectedIndex:[indexPath row]];
-    }
+    if ([_delegate respondsToSelector:@selector(leveyPopListView:didSelectedIndex:)])
+        [_delegate leveyPopListView:self didSelectedIndex:[indexPath row]];
     
-    if (self.handlerBlock) {
-        handlerBlock(indexPath.row);
-    }
+    if (_handlerBlock)
+        _handlerBlock(indexPath.row);
     
     // dismiss self
     [self fadeOut];
 }
 #pragma mark - TouchTouchTouch
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     // tell the delegate the cancellation
-    if (self.delegate && [self.delegate respondsToSelector:@selector(leveyPopListViewDidCancel)]) {
-        [self.delegate leveyPopListViewDidCancel];
-    }
+    if ([_delegate respondsToSelector:@selector(leveyPopListViewDidCancel)])
+        [_delegate leveyPopListViewDidCancel];
     
     // dismiss self
     [self fadeOut];
 }
 
 #pragma mark - DrawDrawDraw
-- (void)drawRect:(CGRect)rect
-{
+- (void)drawRect:(CGRect)rect {
     CGRect bgRect = CGRectInset(rect, POPLISTVIEW_SCREENINSET, POPLISTVIEW_SCREENINSET);
     CGRect titleRect = CGRectMake(POPLISTVIEW_SCREENINSET + 10, POPLISTVIEW_SCREENINSET + 10 + 5,
                                   rect.size.width -  2 * (POPLISTVIEW_SCREENINSET + 10), 30);

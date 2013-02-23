@@ -13,17 +13,10 @@
 @synthesize window = _window;
 @synthesize infoLabel = _infoLabel;
 @synthesize options = _options;
-- (void)dealloc
-{
-    [_infoLabel release];
-    [_options release];
-    [_window release];
-    [super dealloc];
-}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {    
-    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     UIButton *demoBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [demoBtn setTitle:@"亚美得" forState:UIControlStateNormal];
@@ -47,30 +40,28 @@
                  nil] retain];
      */
     
-    _options = [[NSArray arrayWithObjects:@"Facebook1",@"Facebook2",@"Facebook3",@"Facebook4",@"Facebook5", nil]retain];
+    _options = @[@{@"text" : @"Twitter", @"img" : [UIImage imageNamed:@"twitter.png"]},
+                 @"Facebook2", @"Facebook3",
+  @{@"text" : @"LinkedIn", @"img" : [UIImage imageNamed:@"dribbble.png"]}];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
 }
 
-- (void)showListView
-{
+- (void)showListView {
     LeveyPopListView *lplv = [[LeveyPopListView alloc] initWithTitle:@"Share Photo to..." options:_options handler:^(NSInteger anIndex) {
-        _infoLabel.text = [NSString stringWithFormat:@"You have selected %@",[_options objectAtIndex:anIndex]];
+        _infoLabel.text = [NSString stringWithFormat:@"You have selected %@", _options[anIndex]];
     }];
 //    lplv.delegate = self;
     [lplv showInView:self.window animated:YES];
-    [lplv release];
 }
 
 #pragma mark - LeveyPopListView delegates
-- (void)leveyPopListView:(LeveyPopListView *)popListView didSelectedIndex:(NSInteger)anIndex
-{
-    _infoLabel.text = [NSString stringWithFormat:@"You have selected %@",[_options objectAtIndex:anIndex]];
+- (void)leveyPopListView:(LeveyPopListView *)popListView didSelectedIndex:(NSInteger)anIndex {
+    _infoLabel.text = [NSString stringWithFormat:@"You have selected %@",_options[anIndex]];
 }
-- (void)leveyPopListViewDidCancel
-{
+- (void)leveyPopListViewDidCancel {
     _infoLabel.text = @"You have cancelled";
 }
 
