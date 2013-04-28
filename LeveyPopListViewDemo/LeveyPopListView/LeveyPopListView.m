@@ -26,7 +26,10 @@
 
 #pragma mark - initialization & cleaning up
 - (id)initWithTitle:(NSString *)aTitle options:(NSArray *)aOptions {
-    CGRect rect = [[UIScreen mainScreen] applicationFrame];
+    CGRect rect = [[UIScreen mainScreen] applicationFrame]; // portrait bounds
+    if (UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])) {
+        rect.size = CGSizeMake(rect.size.height, rect.size.width);
+    }
     if (self = [super initWithFrame:rect]) {
         self.backgroundColor = [UIColor clearColor];
         _title = [aTitle copy];
@@ -66,12 +69,23 @@
     }];
 
 }
+
+- (void) orientationDidChange: (NSNotification *) not {
+    CGRect rect = [[UIScreen mainScreen] applicationFrame]; // portrait bounds
+    if (UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])) {
+        rect.size = CGSizeMake(rect.size.height, rect.size.width);
+    }
+    [self setFrame:rect];
+    [self setNeedsDisplay];
+}
+
 - (void)fadeOut {
     [UIView animateWithDuration:.35 animations:^{
         self.transform = CGAffineTransformMakeScale(1.3, 1.3);
         self.alpha = 0.0;
     } completion:^(BOOL finished) {
         if (finished) {
+            [[NSNotificationCenter defaultCenter] removeObserver:self];
             [self removeFromSuperview];
         }
     }];
@@ -79,6 +93,10 @@
 
 #pragma mark - Instance Methods
 - (void)showInView:(UIView *)aView animated:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter] addObserver: self
+                                          selector: @selector(orientationDidChange:)
+                                          name: UIApplicationDidChangeStatusBarOrientationNotification
+                                          object: nil];
     [aView addSubview:self];
     if (animated) {
         [self fadeIn];
