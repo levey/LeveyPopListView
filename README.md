@@ -21,4 +21,4 @@ When your app have so many options to choose, LeveyPopListView is an alternative
 
 ### Screenshot ⤵
 
-![Screen](http://i.minus.com/iDQo9wuPCB1Gr.png)    
+![Screen](http://i.imgur.com/mtjFzve.png)    
